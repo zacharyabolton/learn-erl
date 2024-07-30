@@ -48,7 +48,7 @@ server_logoff(From, User_List) ->
 
 %%% Server transfers a message between user
 server_transfer(From, To, Message, User_List) ->
-  %% check that the user is logged on and who he is
+  %% check that the user is logged on and who they are
   case lists:keysearch(From, 1, User_List) of
     false ->
       From ! #abort_client{message=you_are_not_logged_on};
